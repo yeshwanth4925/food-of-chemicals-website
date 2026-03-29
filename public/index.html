@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Food Chemicals & Additives</title>
+<title>Food Additives & Fruity Flavor Chemicals</title>
 
 <style>
 body {
@@ -11,176 +11,136 @@ body {
     margin: 20px;
     background-color: #f9f9f9;
 }
-
 h1, h2 {
     text-align: center;
     color: #333;
 }
-
 input {
     width: 100%;
     padding: 8px;
     margin: 10px 0;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
 }
-
 th, td {
     border: 1px solid #aaa;
     padding: 10px;
+    text-align: left;
 }
-
 th {
     background-color: #4CAF50;
     color: white;
 }
-
 tr:nth-child(even) {
     background-color: #e8f5e9;
 }
-
 tr:hover {
     background-color: #c8e6c9;
 }
-
 /* Safety colors */
 .safe { background-color: #c8e6c9; }
 .moderate { background-color: #fff9c4; }
 .risky { background-color: #ffcdd2; }
-
-/* Accordion */
-.accordion {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    width: 100%;
-    text-align: left;
-    margin-top: 10px;
-}
-
-.panel {
-    display: none;
-    background: white;
-    padding: 10px;
-}
+/* Emojis */
+.emoji { font-size: 1.2em; }
 </style>
 </head>
-
 <body>
 
 <h1>Food Additives, INS & E Numbers</h1>
-
-<input type="text" id="searchINS" placeholder="Search INS or Chemical..." onkeyup="filterINS()">
+<input type="text" id="searchINS" placeholder="Search INS / E Number / Chemical..." onkeyup="filterINS()">
 
 <table id="insTable">
+<thead>
 <tr>
-<th>INS</th>
-<th>Name</th>
-<th>Use</th>
+<th>INS / E Number</th>
+<th>Chemical Name</th>
+<th>Purpose / Use</th>
+<th>Safety</th>
 </tr>
-
-<tr class="safe"><td>E100</td><td>Curcumin</td><td>Coloring</td></tr>
-<tr class="moderate"><td>E150d</td><td>Caramel Color IV</td><td>Coloring</td></tr>
-<tr class="moderate"><td>E200</td><td>Sorbic Acid</td><td>Preservative</td></tr>
-<tr class="safe"><td>E330</td><td>Citric Acid</td><td>Flavoring</td></tr>
-<tr class="moderate"><td>E621</td><td>MSG</td><td>Flavor enhancer</td></tr>
-<tr class="moderate"><td>E951</td><td>Aspartame</td><td>Sweetener</td></tr>
-<tr class="safe"><td>E440</td><td>Pectin</td><td>Gelling agent</td></tr>
-<tr class="safe"><td>E508</td><td>Potassium Chloride</td><td>Salt substitute</td></tr>
-<tr class="moderate"><td>E635</td><td>Disodium Ribonucleotide</td><td>Flavor enhancer</td></tr>
-<tr class="safe"><td>E412</td><td>Guar Gum</td><td>Thickener</td></tr>
-<tr class="moderate"><td>E433</td><td>Polysorbate 80</td><td>Emulsifier</td></tr>
-<tr class="moderate"><td>E407</td><td>Carrageenan</td><td>Stabilizer</td></tr>
-
+</thead>
+<tbody>
+<tr class="safe"><td>E100</td><td>Curcumin</td><td>Coloring</td><td>Safe</td></tr>
+<tr class="moderate"><td>E101</td><td>Riboflavin</td><td>Coloring / Vitamin</td><td>Moderate</td></tr>
+<tr class="moderate"><td>E102</td><td>Tartrazine</td><td>Yellow Coloring</td><td>May cause allergies / hyperactivity</td></tr>
+<tr class="moderate"><td>E110</td><td>Sunset Yellow FCF</td><td>Coloring</td><td>Moderate / possible allergy</td></tr>
+<tr class="safe"><td>E133</td><td>Brilliant Blue FCF</td><td>Coloring</td><td>Safe</td></tr>
+<tr class="moderate"><td>E150a-d</td><td>Caramel Colors</td><td>Coloring</td><td>Moderate / E150d may contain 4-MEI</td></tr>
+<tr class="moderate"><td>E200</td><td>Sorbic Acid</td><td>Preservative</td><td>Moderate / skin irritation</td></tr>
+<tr class="safe"><td>E202</td><td>Potassium Sorbate</td><td>Preservative</td><td>Safe</td></tr>
+<tr class="safe"><td>E211</td><td>Sodium Benzoate</td><td>Preservative</td><td>Safe in small doses</td></tr>
+<tr class="moderate"><td>E250</td><td>Sodium Nitrite</td><td>Preservative</td><td>Moderate / high doses harmful</td></tr>
+<tr class="safe"><td>E330</td><td>Citric Acid</td><td>Acidulant / Flavoring</td><td>Safe</td></tr>
+<tr class="moderate"><td>E331</td><td>Sodium Citrates</td><td>Acidulant / Buffer</td><td>Moderate</td></tr>
+<tr class="moderate"><td>E335</td><td>Sodium / Potassium Tartrate</td><td>Acidulant</td><td>Moderate</td></tr>
+<tr class="moderate"><td>E407</td><td>Carrageenan</td><td>Thickener / Stabilizer</td><td>Moderate</td></tr>
+<tr class="safe"><td>E410</td><td>Locust Bean Gum</td><td>Thickener</td><td>Safe</td></tr>
+<tr class="safe"><td>E412</td><td>Guar Gum</td><td>Thickener</td><td>Safe</td></tr>
+<tr class="moderate"><td>E415</td><td>Xanthan Gum</td><td>Thickener / Stabilizer</td><td>Moderate</td></tr>
+<tr class="moderate"><td>E440</td><td>Pectin</td><td>Gelling agent</td><td>Safe / moderate</td></tr>
+<tr class="moderate"><td>E450a-d</td><td>Sodium / Potassium / Calcium Phosphates</td><td>Raising agent / Stabilizer</td><td>Moderate</td></tr>
+<tr class="moderate"><td>E471</td><td>Mono- & Diglycerides of Fatty Acids</td><td>Emulsifier</td><td>Moderate</td></tr>
+<tr class="moderate"><td>E621</td><td>Monosodium Glutamate (MSG)</td><td>Flavor enhancer</td><td>Moderate / headaches possible</td></tr>
+<tr class="moderate"><td>E951</td><td>Aspartame</td><td>Artificial Sweetener</td><td>Moderate / harmful in PKU</td></tr>
+<tr class="moderate"><td>E635</td><td>Disodium 5'-ribonucleotides</td><td>Flavor enhancer</td><td>Moderate</td></tr>
+</tbody>
 </table>
 
-<h2>Fruity Flavor Chemicals</h2>
-
-<input type="text" id="searchFruity" placeholder="Search Fruity Flavor..." onkeyup="filterFruity()">
-
-<table id="fruityTable">
-<tr><th>Fruit</th><th>Chemical</th></tr>
-
-<tr><td>🍌 Banana</td><td>Isoamyl acetate</td></tr>
-<tr><td>🍍 Pineapple</td><td>Ethyl butyrate</td></tr>
-<tr><td>🍎 Apple</td><td>Hexyl acetate</td></tr>
-<tr><td>🍓 Strawberry</td><td>Furaneol</td></tr>
-<tr><td>🍊 Citrus</td><td>Limonene</td></tr>
-<tr><td>🍇 Grape</td><td>Methyl anthranilate</td></tr>
-<tr><td>🍒 Cherry</td><td>Benzaldehyde</td></tr>
-<tr><td>🍑 Peach</td><td>Gamma-decalactone</td></tr>
-
-</table>
-
-<h2>Side Effects</h2>
-
+<h2>Fruity Flavor Chemicals (Synthetic / Natural-like)</h2>
 <table>
-<tr><th>Chemical</th><th>Side Effects</th></tr>
-
-<tr><td>MSG</td><td>Headache, nausea</td></tr>
-<tr><td>Aspartame</td><td>Headache, harmful in PKU</td></tr>
-<tr><td>Sorbic Acid</td><td>Skin irritation</td></tr>
-<tr><td>Citric Acid</td><td>Tooth erosion</td></tr>
-<tr><td>Caramel Color</td><td>Possible cancer risk</td></tr>
-<tr><td>Benzaldehyde</td><td>Irritation</td></tr>
-
+<thead>
+<tr>
+<th class="emoji">🍎 / 🍌</th>
+<th>Natural Fruit</th>
+<th>Chemical / Flavor Compound</th>
+<th>Replaces Natural Ingredient</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="emoji">🍌</td><td>Banana</td><td>Isoamyl acetate, Amyl acetate</td><td>Banana extract</td></tr>
+<tr><td class="emoji">🍍</td><td>Pineapple</td><td>Ethyl butyrate, Methyl butyrate</td><td>Pineapple extract</td></tr>
+<tr><td class="emoji">🍎</td><td>Apple / Pear</td><td>Hexyl acetate, Butyl acetate, Propyl acetate</td><td>Apple / Pear extracts</td></tr>
+<tr><td class="emoji">🍓</td><td>Strawberry</td><td>Ethyl methylphenylglycidate, Furaneol</td><td>Strawberry extract</td></tr>
+<tr><td class="emoji">🍊</td><td>Citrus (Orange / Lemon)</td><td>Limonene, Citral</td><td>Citrus peel / extract</td></tr>
+<tr><td class="emoji">🍇</td><td>Grape</td><td>Methyl anthranilate</td><td>Grape extract</td></tr>
+<tr><td class="emoji">🍒</td><td>Cherry / Almond</td><td>Benzaldehyde</td><td>Cherry / Almond extract</td></tr>
+<tr><td class="emoji">🍑</td><td>Peach / Apricot</td><td>Gamma-decalactone, Gamma-undecalactone</td><td>Peach / Apricot extract</td></tr>
+<tr><td class="emoji">🍍🍏</td><td>Mixed Fruity</td><td>Ethyl acetate, Ethyl propionate</td><td>Various fruit extracts</td></tr>
+</tbody>
 </table>
 
-<h2>Artificial Flavor Substitutes</h2>
-
-<button class="accordion">🍌 Banana</button>
-<div class="panel">
-<p>Isoamyl acetate used instead of real banana</p>
-</div>
-
-<button class="accordion">🍓 Strawberry</button>
-<div class="panel">
-<p>Furaneol used instead of real strawberry</p>
-</div>
-
-<button class="accordion">🍊 Citrus</button>
-<div class="panel">
-<p>Limonene used instead of orange/lemon</p>
-</div>
-
-<button class="accordion">🍇 Grape</button>
-<div class="panel">
-<p>Methyl anthranilate used instead of grape</p>
-</div>
+<h2>Side Effects / Health Concerns</h2>
+<table>
+<thead>
+<tr>
+<th>Chemical</th>
+<th>Potential Side Effects / Problems</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Monosodium Glutamate (E621)</td><td>Headache, nausea, flushing ("Chinese Restaurant Syndrome")</td></tr>
+<tr><td>Aspartame (E951)</td><td>May trigger headaches; harmful for PKU patients</td></tr>
+<tr><td>Sorbic Acid (E200)</td><td>High doses may cause skin irritation or allergies</td></tr>
+<tr><td>Citric Acid (E330)</td><td>Excess may cause tooth enamel erosion or stomach irritation</td></tr>
+<tr><td>Caramel Color IV (E150d)</td><td>Excess consumption linked to 4-MEI potential cancer risk</td></tr>
+<tr><td>Ethyl Vanillin / Artificial Flavors</td><td>May cause allergic reactions, hyperactivity in sensitive children</td></tr>
+<tr><td>Fruity flavor compounds (Isoamyl acetate, Ethyl butyrate, etc.)</td><td>High doses may cause nausea, vomiting, irritation; generally safe in small amounts</td></tr>
+<tr><td>Benzaldehyde</td><td>High exposure may irritate eyes, skin, respiratory system</td></tr>
+<tr><td>Pectin (E440)</td><td>Generally safe; very high intake may cause digestive discomfort</td></tr>
+</tbody>
+</table>
 
 <script>
 function filterINS() {
     let input = document.getElementById("searchINS").value.toUpperCase();
     let rows = document.getElementById("insTable").getElementsByTagName("tr");
-
     for (let i = 1; i < rows.length; i++) {
         let text = rows[i].innerText.toUpperCase();
         rows[i].style.display = text.includes(input) ? "" : "none";
     }
-}
-
-function filterFruity() {
-    let input = document.getElementById("searchFruity").value.toUpperCase();
-    let rows = document.getElementById("fruityTable").getElementsByTagName("tr");
-
-    for (let i = 1; i < rows.length; i++) {
-        let text = rows[i].innerText.toUpperCase();
-        rows[i].style.display = text.includes(input) ? "" : "none";
-    }
-}
-
-let acc = document.getElementsByClassName("accordion");
-for (let i = 0; i < acc.length; i++) {
-    acc[i].onclick = function () {
-        let panel = this.nextElementSibling;
-        panel.style.display = panel.style.display === "block" ? "none" : "block";
-    };
 }
 </script>
 
